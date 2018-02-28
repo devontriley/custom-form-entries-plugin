@@ -354,7 +354,7 @@ class SP_Plugin {
 	}
 
 	public function load_js() {
-		wp_enqueue_script( 'custom-contact-form', plugins_url( '/js/custom-contact-form.js', __FILE__ ), $deps, $ver, true);
+		wp_enqueue_script( 'custom-contact-form', plugins_url( '/dist/custom-contact-form-min.js', __FILE__ ), $deps, $ver, true);
 	}
 
   public static function set_screen( $status, $option, $value ) {
