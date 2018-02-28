@@ -4,6 +4,7 @@ class contactForm {
     this.fields = form.querySelectorAll('.field');
     this.fieldsArr = [];
     this.errors = false;
+    this.success = form.querySelector('.form-success');
 
     for(var i = 0; i < this.fields.length; i++) {
       this.fieldsArr[i] = {
@@ -14,8 +15,6 @@ class contactForm {
         'inlineMsg': this.fields[i].querySelector('.inline-msg')
       }
     }
-
-    console.log(this.fieldsArr);
 
     // Messages
     this.validationErrors = {
@@ -147,7 +146,7 @@ class contactForm {
 				console.log(xhr, status, error);
 			},
 			success : function(data, status, xhr){
-        console.log(data);
+        this.success.innerHTML = '<h3>Thank you for contacting us!</h3><p>We will be in touch shortly.</p>';
 			}
 	  });
   }
