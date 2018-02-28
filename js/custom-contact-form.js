@@ -4,7 +4,7 @@ class contactForm {
     this.fields = form.querySelectorAll('.field');
     this.fieldsArr = [];
     this.errors = false;
-    this.success = form.querySelector('.form-success');
+    this.success = this.form.querySelector('.form-success');
 
     for(var i = 0; i < this.fields.length; i++) {
       this.fieldsArr[i] = {
@@ -137,8 +137,6 @@ class contactForm {
 
       data[name] = value;
     }
-
-    console.log('submit');
 
     jQuery.ajax({
 			method : 'post',
