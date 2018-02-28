@@ -67,11 +67,16 @@ function contact_form_submit() {
   add_filter( 'wp_mail_content_type', 'set_html_mail_content_type' );
 
   //php mailer variables
-  $to = ['dev@knowncreative.co', 'zarah@knowncreative.co, sunil@thinkforwardfinancial.com'];
+  $to = ['dev@knowncreative.co', 'zarah@knowncreative.co'];
   $subject = 'TFF Contact Form Entry';
   $headers = 'From: '. $email . "\r\n" . 'Reply-To: ' . $email . "\r\n";
 
-  $sent = wp_mail($to, $subject, $message, $headers);
+	$body	= '<p><strong>Name: </strong>'.$name.'</p>';
+	$body .= '<p><strong>Email: </strong>'.$email.'</p>';
+	if($company) $body .= '<p><strong>Company: </strong>'.$company.'</p>';
+	if($message) $message .= '<p><strong>Message: </strong>'.$message.'</p>'
+
+  $sent = wp_mail($to, $subject, $body, $headers);
 
   $wpdb->insert( $table_name, $data, $format );
 
