@@ -74,7 +74,7 @@ function contact_form_submit() {
 	$body	= '<p><strong>Name: </strong>'.$name.'</p>';
 	$body .= '<p><strong>Email: </strong>'.$email.'</p>';
 	if($company) $body .= '<p><strong>Company: </strong>'.$company.'</p>';
-	if($message) $message .= '<p><strong>Message: </strong>'.$message.'</p>'
+	if($message) $message .= '<p><strong>Message: </strong>'.$message.'</p>';
 
   $sent = wp_mail($to, $subject, $body, $headers);
 
