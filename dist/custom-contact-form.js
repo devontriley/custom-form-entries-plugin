@@ -130,6 +130,7 @@ class contactForm {
     var data = {
       'action' : 'contact_form_submit'
     }
+    var success = this.success;
 
     for(var i = 0; i < this.fieldsArr.length; i++) {
       var name = this.fieldsArr[i].name,
@@ -146,8 +147,8 @@ class contactForm {
 				console.log(xhr, status, error);
 			},
 			success : function(data, status, xhr){
-        console.log(this.success);
-        this.success.innerHTML = '<h3>Thank you for contacting us!</h3><p>We will be in touch shortly.</p>';
+        console.log(success);
+        success.innerHTML = '<h3>Thank you for contacting us!</h3><p>We will be in touch shortly.</p>';
 			}
 	  });
   }
