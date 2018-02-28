@@ -83,7 +83,7 @@ function contact_form_submit() {
   if($sent) {
     echo 'success';
   } else {
-    echo $message;
+    echo 'error';
   }
 
   // Reset filter to avoid conflicts
