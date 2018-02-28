@@ -5,6 +5,7 @@ class contactForm {
     this.fieldsArr = [];
     this.errors = false;
     this.success = this.form.querySelector('.form-success');
+    this.button = this.form.querySelector('button#contact-button');
 
     for(var i = 0; i < this.fields.length; i++) {
       this.fieldsArr[i] = {
@@ -131,6 +132,10 @@ class contactForm {
       'action' : 'contact_form_submit'
     }
     var success = this.success;
+    var button = this.button.querySelector('span');
+    var buttonText = button.innerText;
+
+    button.innerText = 'Loading';
 
     for(var i = 0; i < this.fieldsArr.length; i++) {
       var name = this.fieldsArr[i].name,
@@ -145,9 +150,10 @@ class contactForm {
 			data : data,
 			error : function(xhr, status, error){
 				console.log(xhr, status, error);
+        button.innerText = buttonText;
 			},
 			success : function(data, status, xhr){
-        console.log(success);
+        button.innerText = 'Thank You';
         success.innerHTML = '<h3>Thank you for contacting us!</h3><p>We will be in touch shortly.</p>';
 			}
 	  });
