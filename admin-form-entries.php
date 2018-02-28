@@ -67,8 +67,8 @@ function contact_form_submit() {
   add_filter( 'wp_mail_content_type', 'set_html_mail_content_type' );
 
   //php mailer variables
-  $to = ['dev@knowncreative.co', 'zarah@knowncreative.co'];
-  $subject = 'Contact Form Entry';
+  $to = ['dev@knowncreative.co', 'zarah@knowncreative.co, sunil@thinkforwardfinancial.com'];
+  $subject = 'TFF Contact Form Entry';
   $headers = 'From: '. $email . "\r\n" . 'Reply-To: ' . $email . "\r\n";
 
   $sent = wp_mail($to, $subject, $message, $headers);
