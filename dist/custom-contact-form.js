@@ -146,7 +146,6 @@ class contactForm {
 				console.log(xhr, status, error);
 			},
 			success : function(data, status, xhr){
-        console.log(data);
         console.log(this.success);
         this.success.innerHTML = '<h3>Thank you for contacting us!</h3><p>We will be in touch shortly.</p>';
 			}
